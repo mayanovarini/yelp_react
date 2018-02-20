@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import BusinessList from './components/BusinessList/BusinessList';
 import Business from './components/Business/Business';
@@ -10,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>nom nom</h1>
+        <h1><img id="nomster" alt="nomster logo" src="/nomster.png" />nom nom</h1>
           <SearchBar />
           <BusinessList />
       </div>

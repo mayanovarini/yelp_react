@@ -68,6 +68,13 @@ h1 {
   text-align: center;
   background-color: #eac8c8;
   font-family: 'Fredoka One', cursive;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #fff;
+}
+
+#nomster {
+  height: 40px;
+  padding-right: 5px;
+  padding-top: 5px;
+  vertical-align: middle;
 }
