@@ -14,7 +14,7 @@ const business = {
   category: 'Italian',
   rating: 4.5,
   reviewCount: 90
-}
+};
 
 const businesses = [
   business,
