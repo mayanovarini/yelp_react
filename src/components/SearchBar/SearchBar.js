@@ -38,6 +38,12 @@ class SearchBar extends React.Component {
     });
   }
 
+  handleSearch(e){
+    console.log("banana");
+    this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
+    e.preventDefault()
+  }
+
   handleLocationChange(e) {
     this.setState({
       location: e.target.value
@@ -69,7 +75,7 @@ class SearchBar extends React.Component {
           <input onChange={(e) => this.handleLocationChange(e)} placeholder="Where?" />
         </div>
         <div className="SearchBar-submit">
-          <a>Let's Go</a>
+          <a onClick={(e) => this.handleSearch(e)}>Let's Go</a>
         </div>
       </div>
     );

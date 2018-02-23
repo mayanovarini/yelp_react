@@ -27,14 +27,14 @@ const businesses = [
 
 class App extends Component {
   searchYelp(term, location, sortBy){
-      
+      console.log("searching yelp using", term, location, sortBy);
   }
 
   render() {
     return (
       <div className="App">
         <h1><img id="nomster" alt="nomster logo" src="/nomster.png" />nom nom</h1>
-          <SearchBar />
+          <SearchBar searchYelp={this.searchYelp} />
           <BusinessList businesses={businesses} />
       </div>
     );
