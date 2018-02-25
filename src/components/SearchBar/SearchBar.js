@@ -17,6 +17,7 @@ class SearchBar extends React.Component {
     };
   }
 
+  // use the sortBy state to change the styling class
   getSortByClass(sortByOption) {
 
     if(this.state.sortBy === sortByOption) {
@@ -26,28 +27,33 @@ class SearchBar extends React.Component {
     }
   }
 
+  // filter click will change sortBy state that is used as a sort filter
   setSortBy(sortByOption) {
     this.setState({
       sortBy: sortByOption
     });
   }
 
+  // term state changes when user types a new term on search bar
   handleTermChange(e) {
     this.setState({
       term: e.target.value
     });
   }
 
-  handleSearch(e){
-    this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
-    e.preventDefault()
-  }
-
+  // location state changes when user types a new location on search bar
   handleLocationChange(e) {
     this.setState({
       location: e.target.value
     });
   }
+
+  // run the passed in function reference prop
+  handleSearch(e){
+    this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
+    e.preventDefault()
+  }
+
 
   renderSortByOptions() {
     return Object.keys(sortByOptions).map(sortByOption => {
