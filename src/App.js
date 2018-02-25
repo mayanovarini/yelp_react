@@ -30,8 +30,20 @@ const businesses = [
 */
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      businesses : []
+    };
+    this.searchYelp = this.searchYelp.bind(this);
+  }
   searchYelp(term, location, sortBy){
-      console.log("searching yelp using", term, location, sortBy);
+      Yelp.search(term, location, sortBy).then(businesses => {
+        console.log('businesses:', businesses)
+        this.setState({
+          businesses: businesses
+        })
+      });
   }
 
   render() {
@@ -39,7 +51,7 @@ class App extends Component {
       <div className="App">
         <h1><img id="nomster" alt="nomster logo" src="/nomster.png" />nom nom</h1>
           <SearchBar searchYelp={this.searchYelp} />
-          <BusinessList businesses={businesses} />
+          <BusinessList businesses={this.state.businesses} />
       </div>
     );
   }
