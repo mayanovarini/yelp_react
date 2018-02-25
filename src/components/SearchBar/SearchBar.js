@@ -11,8 +11,11 @@ class SearchBar extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      // two input boxes states
       term: '', // refers to the search term located in the search input,
       location: '', // refers to the location to search near from the location input,
+
+      // 3 filters state
       sortBy: 'best_match'// represents the selected sorting option to use.
     };
   }
@@ -48,7 +51,7 @@ class SearchBar extends React.Component {
     });
   }
 
-  // run the passed in function reference prop
+  // run the passed-in function reference prop
   handleSearch(e){
     this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
     e.preventDefault()
