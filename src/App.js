@@ -3,6 +3,9 @@ import './App.css';
 import BusinessList from './components/BusinessList/BusinessList';
 import Business from './components/Business/Business';
 import SearchBar from './components/SearchBar/SearchBar';
+import Yelp from './util/Yelp.js';
+
+/* Project 1 - 3 have these constants, but on project 4, these are replaced with real data
 
 const business = {
   imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
@@ -24,6 +27,7 @@ const businesses = [
   business,
   business
 ];
+*/
 
 class App extends Component {
   searchYelp(term, location, sortBy){
