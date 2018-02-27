@@ -1,0 +1,29 @@
+.PopUp {
+  position: fixed;
+  width: 800px;
+  height: 900px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  overflow-y: scroll;
+  padding-left: 2em;
+  padding-right: 1em;
+  padding-top: 4em;
+
+}
+
+.Business h2:hover {
+  cursor: pointer;
+  color: #65b9be;
+}
+
+.Business button {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 15px;
+  float: right;
+  border-radius: 50%;
+  background-color: #eac8c8;
+}

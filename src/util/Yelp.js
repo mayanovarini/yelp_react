@@ -29,9 +29,13 @@ const Yelp = {
   },
 
   searchReview(business_id){
-    const reviewURL = 'https://api.yelp.com/v3/businesses/{business_id}/reviews';
+    const reviewURL = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/${business_id}/reviews`;
 
-    return fetch(reviewURL).then(response => {
+    return fetch(reviewURL, {
+      headers: {
+        Authorization: `Bearer ${apiKey}`
+      }
+    }).then(response => {
       return response.json()
     }).then(jsonResponse => {
       if(jsonResponse.reviews) {

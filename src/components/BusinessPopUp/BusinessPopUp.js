@@ -1,18 +1,20 @@
 import React from 'react';
 import './BusinessPopUp.css';
 
-class PopUp extends React.Component {
+export default class BusinessPopUp extends React.Component {
 
   renderReviewList() {
+
     return this.props.reviews.map(review => {
+      console.log("review", review);
       return <li className="review-list"
                  key={review.id}>
 
                  <div className="user-container">
                    <div className="user-image-container">
-                     <img src={review.image_url} alt=''/>
+                     <img src={review.imageSrc} alt=''/>
                    </div>
-                   <h3>{review.user.name}</h3>
+                   <h3>{review.name}</h3>
                  </div>
 
                  <div className="review-container">
@@ -25,15 +27,26 @@ class PopUp extends React.Component {
     });
   }
 
+  resetPopUp() {
+    console.log("reset pop up to close this clicked")
+    this.props.closePopUp(false)
+  }
+
 
   render() {
+    if(!this.props.reviews || !this.props.business) {
+      return null;
+    }
+
     return(
       <div className="PopUp">
+        <button onClick={() => this.resetPopUp()}>X</button>
         <div className="PopUp-inner">
           <div className="image-container">
             <img src={this.props.business.imageSrc} alt=''/>
           </div>
           <h2>{this.props.business.name}</h2>
+
           <div className="Business-information">
             <div className="Business-address">
               <p>{this.props.business.address}</p>
@@ -44,12 +57,13 @@ class PopUp extends React.Component {
               <h3>{this.props.business.category}</h3>
               <h3 className="rating">{this.props.business.rating} stars</h3>
               <p>{this.props.business.reviewCount} reviews</p>
-              <h3 className="review-heading">Reviews</p>
-              <ul>
-                {this.renderReviewList()}
-              </ul>
+              <h3 className="review-heading">Reviews</h3>
+
             </div>
           </div>
+          <ul>
+            {this.renderReviewList()}
+          </ul>
         </div>
       </div>
     )
