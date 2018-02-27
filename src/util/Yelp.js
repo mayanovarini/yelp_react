@@ -1,9 +1,9 @@
 const apiKey = 'aL_p75zY6cU7nfg-uZrqgRqLz-LYjjQP2E3CAlPfnIJPmCw76MGZp2KwX7ct6-ZQXu_S9gzwnu64GqyhPnMbM_47zyUia0G1_1Y3jiItXMXRk6EZS6q0Xz3KYYiSWnYx';
-const url = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=';
-
 const Yelp = {
-  search(term, location, sortBy){
-    return fetch(url + term + '&location=' + location + '&sort_by=' + sortBy, {
+  searchBusiness(term, location, sortBy){
+    const businessURL = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=';
+
+    return fetch(businessURL + term + '&location=' + location + '&sort_by=' + sortBy, {
       headers: {
         Authorization: `Bearer ${apiKey}`
       }
@@ -22,6 +22,26 @@ const Yelp = {
           category: business.categories[0].title,
           rating: business.rating,
           reviewCount: business.review_count
+        }));
+      }
+      return [];
+    })
+  },
+
+  searchReview(business_id){
+    const reviewURL = 'https://api.yelp.com/v3/businesses/{business_id}/reviews';
+
+    return fetch(reviewURL).then(response => {
+      return response.json()
+    }).then(jsonResponse => {
+      if(jsonResponse.reviews) {
+        return jsonResponse.reviews.map(review => ({
+          id: review.id,
+          imageSrc: review.image_url,
+          name: review.user.name,
+          text: review.text,
+          rating: review.rating,
+          url: review.url
         }));
       }
       return [];

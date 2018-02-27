@@ -37,8 +37,9 @@ class App extends Component {
     };
     this.searchYelp = this.searchYelp.bind(this);
   }
+  
   searchYelp(term, location, sortBy){
-    Yelp.search(term, location, sortBy).then(businesses => {
+    Yelp.searchBusiness(term, location, sortBy).then(businesses => {
       console.log('businesses:', businesses)
       this.setState({
         businesses: businesses
