@@ -19,7 +19,7 @@ export default class BusinessPopUp extends React.Component {
                  </div>
 
                  <div className="review-container">
-                   <h3>I gave {this.props.business.name}, {review.rating} stars!</h3>
+                   <h3>I gave <span>{this.props.business.name}</span>, {review.rating} stars!</h3>
                    <p>{review.text}</p>
                    <p className="check-mine">Check my review <a href={review.url}>here</a></p>
                  </div>

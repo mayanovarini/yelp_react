@@ -45,7 +45,7 @@
 
 .review-container {
   background: rgba(202, 173, 173, 0.13);
-  border-radius: 3%;
+  border-radius: 20px;
   padding: 20px;
   margin: 30px;
   font-size: .88rem;
@@ -55,7 +55,13 @@
 
 .review-container h3 {
   font-size: 30px;
-  color: #65b9be;
+  color: #eac167;
+  font-weight: bold;
+}
+
+.review-container h3 span {
+  font-weight: normal;
+  color: rgb(154, 148, 143);
 }
 
 .check-mine {
@@ -64,7 +70,6 @@
 }
 
 .PopUp-inner .image-container {
-  border-radius: 5%;
   height: 440px;
 }
 
