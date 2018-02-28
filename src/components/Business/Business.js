@@ -1,38 +1,18 @@
 import React from 'react';
 import './Business.css';
-import BusinessPopUp from '../BusinessPopUp/BusinessPopUp';
 import Yelp from '../../util/Yelp.js';
 
 
 // this component calls searchReview
 
 class Business extends React.Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-      reviews: [],
-      showPopUp: false
-    }
-
-    this.togglePopUp = this.togglePopUp.bind(this);
-    this.showPopUp = this.showPopUp.bind(this);
-  }
-
-  togglePopUp(value){
-    this.setState({
-      showPopUp: value
-    })
-  }
 
   showPopUp(id) {
-    console.log("reviews shows up");
-    Yelp.searchReview(this.props.business.id).then(reviews =>
-      this.setState({
-        reviews: reviews,
-        showPopUp: true
-      })
-    )
+    this.props.togglePopUp(this.props.business);
+
+    Yelp.searchReview(id).then(new_reviews =>
+      this.props.updateReviews(new_reviews))
+
   }
 
   render(){
@@ -42,14 +22,6 @@ class Business extends React.Component {
           <img src={this.props.business.imageSrc} alt=''/>
         </div>
         <h2 onClick={() => this.showPopUp(this.props.business.id)}>{this.props.business.name}</h2>
-
-          {this.state.showPopUp ?
-            <BusinessPopUp text="Close PopUp"
-                           reviews={this.state.reviews}
-                           closePopUp={this.togglePopUp}
-                           business={this.props.business} />
-            : null
-          }
 
         <div className="Business-information">
           <div className="Business-address">

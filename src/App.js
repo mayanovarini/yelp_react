@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import BusinessList from './components/BusinessList/BusinessList';
-import Business from './components/Business/Business';
 import SearchBar from './components/SearchBar/SearchBar';
 import Yelp from './util/Yelp.js';
 
@@ -37,7 +36,7 @@ class App extends Component {
     };
     this.searchYelp = this.searchYelp.bind(this);
   }
-  
+
   searchYelp(term, location, sortBy){
     Yelp.searchBusiness(term, location, sortBy).then(businesses => {
       console.log('businesses:', businesses)

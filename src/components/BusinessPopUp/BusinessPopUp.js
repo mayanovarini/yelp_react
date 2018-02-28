@@ -1,10 +1,11 @@
 import React from 'react';
 import './BusinessPopUp.css';
 
+// TODO need to render from BusinessList
+
 export default class BusinessPopUp extends React.Component {
 
   renderReviewList() {
-
     return this.props.reviews.map(review => {
       console.log("review", review);
       return <li className="review-list"
@@ -28,12 +29,13 @@ export default class BusinessPopUp extends React.Component {
   }
 
   resetPopUp() {
-    console.log("reset pop up to close this clicked")
-    this.props.closePopUp(false)
+    console.log("close pop up and turn popup state to false ")
+    this.props.closePopUp(this.props.popUpStatus)
   }
 
 
   render() {
+    console.log("rendering BusinessPopUp", this.props.reviews, this.props.business);
     if(!this.props.reviews || !this.props.business) {
       return null;
     }
