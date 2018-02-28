@@ -44,7 +44,7 @@
 }
 
 .review-container {
-  background: rgba(202, 173, 173, 0.13);
+  background: rgba(101, 185, 190, 0.11);
   border-radius: 20px;
   padding: 20px;
   margin: 30px;
@@ -57,6 +57,7 @@
   font-size: 30px;
   color: #eac167;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .review-container h3 span {
