@@ -13,7 +13,7 @@ export default class BusinessPopUp extends React.Component {
 
                  <div className="user-container">
                    <div className="user-image-container">
-                     <img src={review.imageSrc} alt=''/>
+                     <img src={review.userImageSrc} alt=''/>
                    </div>
                    <h3>{review.name}</h3>
                  </div>

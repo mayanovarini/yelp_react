@@ -41,7 +41,7 @@ const Yelp = {
       if(jsonResponse.reviews) {
         return jsonResponse.reviews.map(review => ({
           id: review.id,
-          imageSrc: review.image_url,
+          userImageSrc: review.user.image_url,
           name: review.user.name,
           text: review.text,
           rating: review.rating,
