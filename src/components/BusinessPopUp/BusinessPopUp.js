@@ -50,17 +50,16 @@ export default class BusinessPopUp extends React.Component {
           <h2>{this.props.business.name}</h2>
 
           <div className="Business-information">
+            <div className="Business-reviews">
+              <h3> {this.props.business.category} <span> | </span>
+                    {this.props.business.rating} stars <span> | </span>
+                    {this.props.business.reviewCount} reviews
+              </h3>
+            </div>
             <div className="Business-address">
               <p>{this.props.business.address}</p>
               <p>{this.props.business.city}</p>
               <p>{this.props.business.state} {this.props.business.zipCode}</p>
-            </div>
-            <div className="Business-reviews">
-              <h3>{this.props.business.category}</h3>
-              <h3 className="rating">{this.props.business.rating} stars</h3>
-              <p>{this.props.business.reviewCount} reviews</p>
-              <h3 className="review-heading">Reviews</h3>
-
             </div>
           </div>
           <ul>
