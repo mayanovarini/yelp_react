@@ -13,12 +13,7 @@
 
 }
 
-.Business h2:hover {
-  cursor: pointer;
-  color: #65b9be;
-}
-
-.Business button {
+.PopUp button {
   font-size: 20px;
   cursor: pointer;
   padding: 10px;
@@ -26,4 +21,38 @@
   float: right;
   border-radius: 50%;
   background-color: #eac8c8;
+}
+
+.user-photo {
+  width: 100px;
+}
+
+.review-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.user-container {
+
+}
+
+.review-container {
+  background: rgba(202, 173, 173, 0.13);
+  border-radius: 3%;
+  padding: 20px;
+  margin: 30px;
+  font-size: .88rem;
+  font-weight: 300;
+  line-height: 2rem;
+}
+
+.review-container h3 {
+  font-size: 30px;
+  color: #65b9be;
+}
+
+.check-mine {
+  text-align: right;
+  color: grey;
 }

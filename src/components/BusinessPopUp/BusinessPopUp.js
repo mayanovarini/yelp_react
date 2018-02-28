@@ -13,15 +13,15 @@ export default class BusinessPopUp extends React.Component {
 
                  <div className="user-container">
                    <div className="user-image-container">
-                     <img src={review.userImageSrc} alt=''/>
+                     <img className="user-photo" src={review.userImageSrc} alt=''/>
                    </div>
                    <h3>{review.name}</h3>
                  </div>
 
                  <div className="review-container">
-                   <h3>I gave{this.props.business.name}, {review.rating} stars!</h3>
+                   <h3>I gave {this.props.business.name}, {review.rating} stars!</h3>
                    <p>{review.text}</p>
-                   <p>Check my review <a href={review.url}>here</a></p>
+                   <p className="check-mine">Check my review <a href={review.url}>here</a></p>
                  </div>
 
              </li>

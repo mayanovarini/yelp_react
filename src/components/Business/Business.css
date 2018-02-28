@@ -50,3 +50,8 @@
   font-size: .88rem;
   line-height: 1rem;
 }
+
+.Business h2:hover {
+  cursor: pointer;
+  color: #65b9be;
+}
