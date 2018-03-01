@@ -42,7 +42,7 @@ export default class BusinessPopUp extends React.Component {
 
     return(
       <div className="PopUp">
-        <button onClick={() => this.resetPopUp()}>X</button>
+        <button id="btn-close" onClick={() => this.resetPopUp()}>X</button>
         <div className="PopUp-inner">
           <div className="image-container">
             <img src={this.props.business.imageSrc} alt=''/>
