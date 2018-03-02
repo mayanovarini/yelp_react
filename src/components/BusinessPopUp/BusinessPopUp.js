@@ -7,7 +7,6 @@ export default class BusinessPopUp extends React.Component {
 
   renderReviewList() {
     return this.props.reviews.map(review => {
-      console.log("review", review);
       return <li className="review-list"
                  key={review.id}>
 
@@ -29,13 +28,11 @@ export default class BusinessPopUp extends React.Component {
   }
 
   resetPopUp() {
-    console.log("close pop up and turn popup state to false ")
     this.props.closePopUp(this.props.popUpStatus)
   }
 
 
   render() {
-    console.log("rendering BusinessPopUp", this.props.reviews, this.props.business);
     if(!this.props.reviews || !this.props.business) {
       return null;
     }
