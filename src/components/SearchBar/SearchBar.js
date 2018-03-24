@@ -16,7 +16,7 @@ class SearchBar extends React.Component {
       location: '', // refers to the location to search near from the location input,
 
       // 3 filters state
-      sortBy: 'best_match'// represents the selected sorting option to use.
+      sortBy: 'sortBy' in props ? props.sortBy : 'best_match'// represents the selected sorting option to use.
     };
   }
 
